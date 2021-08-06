@@ -1,0 +1,41 @@
+{% extends "layout_admin.html"%}
+{% block body %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    tr {
+      border: 1px solid #dddddd;
+    }
+    
+
+</style>
+    <h2>Report </h2>
+    
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>Resume Link</th>
+      </tr>
+      {% for i in range(0,k)%}
+      <tr>
+        <td>{{dict['name'][i]}}</td>
+        <td>{{dict['user_name'][i]}}</td>
+        <td>{{dict['resume_link'][i]}}</td>
+      </tr>
+      {% endfor %}
+
+
+    </table>
+    <form method="post">
+      <input type="hidden" id="fname" name="job_id" value="{{dict}}" >
+      <button class="btn btn-outline-success" type="submit" style="font-weight: normal;font-family: Antic, sans-serif;">            
+        Evaluate Applications
+        <i class="icon-social-linkedin"></i>
+      </button>
+  </form>
+{% endblock %}

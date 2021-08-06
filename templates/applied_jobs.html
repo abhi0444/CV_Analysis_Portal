@@ -1,0 +1,26 @@
+{% extends "layout.html"%}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min3.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/card-3-column-animation-shadows-images.css') }}">
+<section>
+    <div class="container">
+        <div class="row">
+
+            {% for i in range(0,k)%}
+            <div class="col-auto col-sm-12 col-md-12 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                <div class="bg-light border rounded shadow card" data-bs-hover-animate="pulse"><img class="card-img-top" src="static/img/alleStudio2.jpg">
+                    <div class="card-body">
+                        <h3 class="card-title" style="font-family: Antic, sans-serif;color: rgb(81,87,94);">{{dict['company_name'][i]}}</h3>
+                        <h5 class="card-sub-title" style="font-family: Antic, sans-serif;color: #38ae53;">{{dict['position'][i]}}</h5>
+                        <h5 class="card-sub-title" style="font-family: Antic, sans-serif;color: #38ae53;">Skills Required : {{dict['required_skill'][i]}}</h5>
+                        <p class="card-text" style="font-family: Antic, sans-serif;color: rgb(81,87,94);"></p><p id="lorem">{{dict['job_description'][i]}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        <p>{{msg}}</p>    
+        </div>
+
+    </div>
+</section>
+{% endblock %}

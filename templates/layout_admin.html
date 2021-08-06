@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CV Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font/simple-line-icons.min.css') }}">
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+
+    <div id="page-top">
+        <div id="wrapper">
+            <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+                <div class="container-fluid d-flex flex-column p-0">
+                    <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                        <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                        <div class="sidebar-brand-text mx-3"><span>CV Analysis</span></div>
+                    </a>
+                    <hr class="sidebar-divider my-0">
+                    <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('dashboard_admin')}}"><i class="fas fa-user"></i><span>Dashboard</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('job_input')}}"><i class="far fa-user-circle"></i><span>Add Jobs</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="d-flex flex-column" id="content-wrapper">
+                <div id="content">
+                    <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                        <div class="container-fluid"><h2>Welcome </h2>
+                            <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                <div class="input-group">
+                                    <div class="input-group-append"></div>
+                                </div>
+                            </form>
+                            <ul class="nav navbar-nav flex-nowrap ml-auto">
+                                <div class="d-none d-sm-block topbar-divider"></div>
+                                <li class="nav-item dropdown no-arrow">
+                                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{user}}</span><img class="border rounded-circle img-profile" src="static/avatars/avatar3.jpeg"></a>
+                                        <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="container-fluid">
+                        <h3 class="text-dark mb-1">{% block page_title %}{% endblock %}</h3>
+                        <p>{% block body %}{% endblock %}</p>
+                    </div>
+                </div>
+            </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+    </div>
+</html>

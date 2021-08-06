@@ -1,0 +1,19 @@
+{% extends "layout.html"%}
+{% block body %}
+<h1>Company Name : {{job1.company_name}}</h1>
+<br>
+<br>
+<h3>Position : {{job1.position}}</h3>
+<br>
+<h3>Skills Required : {{job1.required_skill}}</h3>
+<br>
+<h3>CGPA Cut Off : {{job1.cgpa_cutoff}}</h3>
+<br>
+<h5>{{job1.job_description}}</h5>
+<p>Click on Submit Button to Apply for the Role</p>
+<form method="post" ><input type="hidden" id="fname" name="job_id" value="{{job1.job_id}}" >
+    <button class="btn btn-outline-success" type="submit" style="font-weight: normal;font-family: Antic, sans-serif;">
+        Submit Application<i class="icon-social-linkedin"></i>
+    </button>
+</form>
+{% endblock %}

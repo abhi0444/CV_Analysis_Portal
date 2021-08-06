@@ -1,0 +1,66 @@
+{% extends "layout_admin.html" %}
+{% block body %}
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    </style>
+<h3>Add Jobs</h3>
+
+<div class="container">
+    <form method="post" >
+  
+      <label for="fname">Job ID</label>
+      <input type="text" id="fname" name="job_id" placeholder="Job ID">
+  
+      <label for="lname">Company Name</label>
+      <input type="text" id="lname" name="company_name" placeholder="Company Name">
+
+      <label for="lname">Position</label>
+      <input type="text" id="lname" name="position" placeholder="Position">
+
+      <label for="lname">CGPA Cut Off</label>
+      <input type="number" id="lname" name="cgpa_cutoff" step="0.01" placeholder="CGPA Required">
+      <br>
+      <label for="lname">Skills Required</label>
+      <input type="text" id="lname" name="skills" placeholder="Required Skills Seprated with spaces">
+      <label for="subject">Job Description</label>
+      <textarea id="subject" name="job_description" placeholder="Job Description" style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+  
+    </form>
+
+    <br>
+    <h6>{{msg}}</h6>
+  </div>
+{% endblock %}

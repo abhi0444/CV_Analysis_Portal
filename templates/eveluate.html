@@ -1,0 +1,44 @@
+{% extends "layout_admin.html"%}
+{% block body %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    tr {
+      border: 1px solid #dddddd;
+    }
+    
+
+</style>
+    <h2>Report of Applicants</h2>
+    
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>CV Score</th>
+        <th>Total Score</th>
+      </tr>
+      {% for i in range(0,k)%}
+      <tr>
+        <td>{{dict['name'][i]}}</td>
+        <td>{{dict['user_name'][i]}}</td>
+        <td>{{dict['cv_score'][i]}}</td>
+        <td>{{dict['total_score'][i]}}</td>
+      </tr>
+      {% endfor %}
+
+
+    </table>
+    <form method="post" >
+      <input type="number" id="fname" name="cutoff" placeholder="Cutoff">
+      <button class="btn btn-outline-success" type="submit" style="font-weight: normal;font-family: Antic, sans-serif;">
+          Set Cutoff<i class="icon-social-linkedin"></i>
+      </button>
+  </form>
+<p>{{msg}}</p>
+   
+{% endblock %}
